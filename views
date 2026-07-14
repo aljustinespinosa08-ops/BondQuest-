@@ -1,0 +1,8 @@
+views/login.html
+views/register.html
+views/dashboard.html
+views/game.html
+views/pretest.html
+views/posttest.html
+views/leaderboard.html
+views/admin.html
