@@ -26,3 +26,4 @@ function startGame() {
 }
 
 startGame();
+startGame();
