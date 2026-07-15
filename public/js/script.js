@@ -14,5 +14,4 @@ const questions = [
         coins: 5
     }
 ];
-
 startGame();
