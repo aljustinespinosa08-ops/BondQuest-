@@ -39,7 +39,7 @@ function checkAnswer(answer) {
         addCoins(q.coins);
 
         unlockBadge(1);
-
+updateProgress(true);
         console.log("✅ Correct!");
 
     } else {
