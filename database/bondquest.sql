@@ -23,6 +23,50 @@ CREATE TABLE students (
 CREATE TABLE teachers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+CREATE TABLE leaderboard (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    total_xp INT DEFAULT 0,
+    total_coins INT DEFAULT 0,
+    rank_position INT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+CREATE TABLE pretest_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    score INT,
+    total_questions INT,
+    date_taken TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+CREATE TABLE posttest_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    score INT,
+    total_questions INT,
+    date_taken TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+CREATE TABLE learning_gain (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    pretest_score INT,
+    posttest_score INT,
+    gain_percentage DECIMAL(5,2),
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+CREATE TABLE achievements (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    badge_id INT,
+    earned_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (badge_id) REFERENCES badges(id)
+);
     department VARCHAR(100),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
