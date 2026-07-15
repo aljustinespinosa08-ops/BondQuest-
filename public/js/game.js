@@ -42,13 +42,15 @@ function checkAnswer(answer) {
 updateProgress(true);
         console.log("✅ Correct!");
 
-    } else {
+else {
 
-        loseLife();
+    loseLife();
 
-        console.log("❌ Wrong!");
+    updateProgress(false);
 
-    }
+    console.log("❌ Wrong!");
+
+}
 
     nextQuestion();
 
