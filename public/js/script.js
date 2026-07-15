@@ -15,11 +15,6 @@ const questions = [
     }
 ];
 
-let currentQuestion = 0;
-let score = 0;
-let xp = 0;
-let coins = 0;
-
 function startGame() {
     console.log("BondQuest Started!");
     console.log(questions[currentQuestion]);
