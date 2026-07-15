@@ -15,9 +15,4 @@ const questions = [
     }
 ];
 
-function startGame() {
-    console.log("BondQuest Started!");
-    console.log(questions[currentQuestion]);
-}
-
 startGame();
