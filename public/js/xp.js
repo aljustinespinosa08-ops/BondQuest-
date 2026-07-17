@@ -4,13 +4,16 @@ let level = 1;
 function addXP(points) {
     xp += points;
 
+    document.getElementById("xp").textContent =
+        "⭐ XP: " + xp;
+
     if (xp >= 100) {
         level++;
         xp = 0;
 
-        console.log("🎉 Level Up!");
-        console.log("Current Level:", level);
-    }
+        document.getElementById("level").textContent =
+            "🥇 Level: " + level;
 
-    console.log("Current XP:", xp);
+        console.log("🎉 Level Up!");
+    }
 }
