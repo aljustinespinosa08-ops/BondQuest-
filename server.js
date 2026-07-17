@@ -1,23 +1,59 @@
 require("dotenv").config();
 
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-const authRoutes = require("./routes/auth");
-
-app.use(express.json());
-
 // Routes
+const authRoutes = require("./route/auth");
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Static Files
+app.use(express.static(path.join(__dirname, "public")));
+
+// API Routes
 app.use("/api/auth", authRoutes);
 
-// Home Route
+// Pages
 app.get("/", (req, res) => {
-    res.send("🧪 BondQuest API is Running!");
+    res.sendFile(path.join(__dirname, "views", "login.html"));
 });
 
-// Server
+app.get("/register", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "register.html"));
+});
+
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "dashboard.html"));
+});
+
+app.get("/game", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "game.html"));
+});
+
+app.get("/leaderboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "leaderboard.html"));
+});
+
+app.get("/pretest", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "pretest.html"));
+});
+
+app.get("/posttest", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "posttest.html"));
+});
+
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "admin.html"));
+});
+
+// Start Server
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`BondQuest Server running on port ${PORT}`);
+    console.log(`🚀 BondQuest Server running on port ${PORT}`);
 });
