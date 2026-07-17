@@ -1,7 +1,37 @@
 let currentQuestion = 0;
 let score = 0;
 
-function startGame() {
+function loadQuestion() {
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1);
+
+    document.getElementById("questionText").textContent =
+        q.question;
+
+    const choicesDiv = document.getElementById("choices");
+    choicesDiv.innerHTML = "";
+
+    q.choices.forEach(choice => {
+
+        const button = document.createElement("button");
+        button.textContent = choice;
+
+        button.onclick = function () {
+            checkAnswer(choice);
+        };
+
+        choicesDiv.appendChild(button);
+        choicesDiv.appendChild(document.createElement("br"));
+        choicesDiv.appendChild(document.createElement("br"));
+
+    });
+
+    startTimer();
+
+}
     currentQuestion = 0;
     score = 0;
 
