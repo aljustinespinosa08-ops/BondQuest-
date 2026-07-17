@@ -14,5 +14,8 @@ function updateProgress(isCorrect) {
         progress.wrongAnswers++;
     }
 
-    console.log("Progress:", progress);
+    console.log("Completed:", progress.completedQuestions);
+    console.log("Correct:", progress.correctAnswers);
+    console.log("Wrong:", progress.wrongAnswers);
+
 }
