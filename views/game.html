@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BondQuest Game</title>
+
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 
 <div class="login-container">
 
-<h1>🧪 BondQuest</h1>
+    <h1>🧪 BondQuest</h1>
 
-<h2>Level: Beginner</h2>
+    <h2 id="level">🥇 Level: 1</h2>
 
-<p id="xp">⭐ XP: 0</p>
-<p id="coins">🪙 Coins: 0</p>
-<p id="lives">❤️ Lives: 3</p>
-<p id="timer">⏱️ Time: 60 seconds</p>
+    <p id="xp">⭐ XP: 0</p>
+    <p id="coins">🪙 Coins: 0</p>
+    <p id="lives">❤️ Lives: 3</p>
+    <p>⏱️ Time: <span id="timer">60</span> seconds</p>
 
-<hr>
+    <hr>
 
-<h3 id="questionNumber">Question 1</h3>
+    <h3 id="questionNumber">Question 1</h3>
 
-<p id="questionText">Loading Question...</p>
+    <p id="questionText">Loading Question...</p>
 
-<div id="choices"></div>
+    <div id="choices"></div>
 
-<script src="../public/js/script.js"></script>
-<script src="../public/js/game.js"></script>
+</div>
+
+<script src="/js/script.js"></script>
+<script src="/js/timer.js"></script>
+<script src="/js/xp.js"></script>
+<script src="/js/coins.js"></script>
+<script src="/js/lives.js"></script>
+<script src="/js/badges.js"></script>
+<script src="/js/progress.js"></script>
+<script src="/js/leaderboard.js"></script>
+<script src="/js/saveScore.js"></script>
+<script src="/js/game.js"></script>
 
 </body>
 </html>
