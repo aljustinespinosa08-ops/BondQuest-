@@ -9,6 +9,14 @@ function updateLeaderboard(playerName, score) {
 
     leaderboard.sort((a, b) => b.score - a.score);
 
-    console.log("🏆 Leaderboard");
-    console.table(leaderboard);
+    const topFive = leaderboard.slice(0, 5);
+
+    console.log("🏆 Top 5 Leaderboard");
+
+    topFive.forEach((player, index) => {
+        console.log(
+            `${index + 1}. ${player.name} - ${player.score}`
+        );
+    });
+
 }
