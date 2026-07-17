@@ -58,17 +58,21 @@ function checkAnswer(answer) {
 
     nextQuestion();
 }
+if (currentQuestion >= questions.length) {
+
+    console.log("🎉 Game Finished!");
+    console.log("Final Score:", score);
+
+    saveScore("Player", score);
+
+    return;
+
+}
 
 function nextQuestion() {
     currentQuestion++;
 
-    if (currentQuestion >= questions.length) {
-        console.log("🎉 Game Finished!");
-        console.log("Final Score:", score);
-        return;
-    }
+    
 
-    loadQuestion();
-}
 
 startGame();
