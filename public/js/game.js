@@ -1,8 +1,13 @@
 let currentQuestion = 0;
 let score = 0;
 
-function loadQuestion() {
+function startGame() {
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion();
+}
 
+function loadQuestion() {
     const q = questions[currentQuestion];
 
     document.getElementById("questionNumber").textContent =
@@ -15,7 +20,6 @@ function loadQuestion() {
     choicesDiv.innerHTML = "";
 
     q.choices.forEach(choice => {
-
         const button = document.createElement("button");
         button.textContent = choice;
 
@@ -26,80 +30,45 @@ function loadQuestion() {
         choicesDiv.appendChild(button);
         choicesDiv.appendChild(document.createElement("br"));
         choicesDiv.appendChild(document.createElement("br"));
-
     });
 
     startTimer();
-
-}
-    currentQuestion = 0;
-    score = 0;
-
-    loadQuestion();
-}
-
-function loadQuestion() {
-
-    const q = questions[currentQuestion];
-
-    console.log("Question:", q.question);
-
-    console.log("Choices:");
-
-    q.choices.forEach((choice, index) => {
-        console.log((index + 1) + ". " + choice);
-    });
-
-    startTimer();
-
 }
 
 function checkAnswer(answer) {
-
     stopTimer();
 
     const q = questions[currentQuestion];
 
     if (answer === q.answer) {
-
         score++;
 
         addXP(q.xp);
-
         addCoins(q.coins);
-
         unlockBadge(1);
-updateProgress(true);
+        updateProgress(true);
+
         console.log("✅ Correct!");
+    } else {
+        loseLife();
+        updateProgress(false);
 
-else {
-
-    loseLife();
-
-    updateProgress(false);
-
-    console.log("❌ Wrong!");
-
-}
+        console.log("❌ Wrong!");
+    }
 
     nextQuestion();
-
 }
 
 function nextQuestion() {
-
     currentQuestion++;
 
     if (currentQuestion >= questions.length) {
-
         console.log("🎉 Game Finished!");
-
         console.log("Final Score:", score);
-
         return;
-
     }
 
     loadQuestion();
-
 }
+
+startGame();
