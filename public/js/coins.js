@@ -3,7 +3,8 @@ let coins = 0;
 function addCoins(amount) {
     coins += amount;
 
-    console.log("Coins:", coins);
+    document.getElementById("coins").textContent =
+        "🪙 Coins: " + coins;
 }
 
 function spendCoins(amount) {
@@ -12,7 +13,8 @@ function spendCoins(amount) {
 
         coins -= amount;
 
-        console.log("Coins Left:", coins);
+        document.getElementById("coins").textContent =
+            "🪙 Coins: " + coins;
 
     } else {
 
