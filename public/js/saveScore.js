@@ -6,5 +6,9 @@ function saveScore(playerName, score) {
         date: new Date().toLocaleString()
     };
 
-    console.log("Saved Score:", result);
+    console.log("💾 Score Saved");
+    console.log(result);
+
+    updateLeaderboard(playerName, score);
+
 }
