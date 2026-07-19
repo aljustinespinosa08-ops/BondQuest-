@@ -4,49 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BondQuest - Register</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
 <div class="login-container">
 
-<h1>Create Account</h1>
+    <h1>🧪 Create BondQuest Account</h1>
 
-<form>
+    <form id="registerForm">
 
-<label>Full Name</label><br>
-<input type="text" placeholder="Enter your full name" required>
+        <label for="fullname">Full Name</label><br>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+        >
 
-<label>Email</label><br>
-<input type="email" placeholder="Enter your email" required>
+        <br><br>
 
-<label>Student ID</label><br>
-<input type="text" placeholder="Enter your Student ID">
+        <label for="email">Email</label><br>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
 
-<label>Password</label><br>
-<input type="password" placeholder="Enter your password" required>
+        <br><br>
 
-<label>Confirm Password</label><br>
-<input type="password" placeholder="Confirm your password" required>
+        <label for="studentid">Student ID</label><br>
+        <input
+            type="text"
+            id="studentid"
+            name="studentid"
+            placeholder="Enter your Student ID"
+        >
 
-<label>Role</label><br>
+        <br><br>
 
-<select>
-    <option>Student</option>
-    <option>Teacher</option>
-</select>
+        <label for="password">Password</label><br>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
 
-<br><br>
+        <br><br>
 
-<button type="submit">Register</button>
+        <label for="confirmPassword">Confirm Password</label><br>
+        <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            required
+        >
 
-</form>
+        <br><br>
 
-<br>
+        <label for="role">Role</label><br>
 
-<a href="login.html">Already have an account? Login</a>
+        <select id="role" name="role">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Already have an account? Login</a>
 
 </div>
+
+<script src="/js/register.js"></script>
 
 </body>
 </html>
